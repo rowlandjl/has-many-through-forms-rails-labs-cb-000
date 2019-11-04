@@ -8,3 +8,10 @@
     <li><%= comment.user.username %> says: <%= comment.content %></li>
   <% end %>
 </ul>
+
+Commentors:
+<ul>
+  <% @post.users.distinct.each do |user| %>
+    <li><%= link_to user.username, user_path(user) %></li>
+  <% end %>
+</ul>
